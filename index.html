@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clouds Coffee | Demo Menu</title>
+  <meta name="description" content="Clouds Coffee digital menu demo">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">☁</div>
+      <div><strong>CLOUDS</strong><span>COFFEE</span></div>
+    </div>
+    <button id="langBtn" class="icon-btn">عربي</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay">
+        <p class="eyebrow">COFFEE • FOOD • SPORTS • GOOD VIBES</p>
+        <h1>More Than<br><em>Coffee</em></h1>
+        <p class="hero-copy">Good coffee, great food and the best games.</p>
+        <button class="primary" onclick="scrollToMenu()">View Menu <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="quick-cats" id="categories">
+      <button onclick="filterMenu('coffee')">☕<span>Hot Coffee</span></button>
+      <button onclick="filterMenu('cold')">🧊<span>Cold Drinks</span></button>
+      <button onclick="filterMenu('mocktails')">🍹<span>Mocktails</span></button>
+      <button onclick="filterMenu('food')">🍔<span>Food</span></button>
+      <button onclick="filterMenu('dessert')">🍰<span>Desserts</span></button>
+      <button onclick="filterMenu('sports')">⚽<span>Live Sports</span></button>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow blue">OUR MENU</p>
+          <h2>Great Taste, Every Day</h2>
+        </div>
+      </div>
+
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="Search for your favorite..." oninput="renderMenu()">
+      </div>
+
+      <div class="tabs" id="tabs">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="coffee">Hot Coffee</button>
+        <button data-filter="cold">Cold Drinks</button>
+        <button data-filter="mocktails">Mocktails</button>
+        <button data-filter="food">Food</button>
+        <button data-filter="dessert">Desserts</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="promo">
+      <div>
+        <p class="eyebrow blue">CLOUDS SPORTS BAR</p>
+        <h2>Watch. Cheer. Enjoy.</h2>
+        <p>Catch your favorite games with your favorite people.</p>
+      </div>
+      <div class="ball">⚽</div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">☁ CLOUDS <small>COFFEE</small></div>
+      <h2>Good Coffee.<br>Better Moments.</h2>
+      <p>See you at Clouds ☁</p>
+      <div class="footer-line">COFFEE • FOOD • SPORTS • GOOD VIBES</div>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">×</button>
+      <img id="modalImg" alt="">
+      <div class="modal-body">
+        <p class="eyebrow blue">CLOUDS SPECIAL</p>
+        <h2 id="modalName"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-bottom">
+          <strong id="modalPrice"></strong>
+          <button class="primary" onclick="closeModal()">Add to Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
