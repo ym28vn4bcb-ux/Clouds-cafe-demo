@@ -23,8 +23,9 @@
             justify-content: space-between;
         }
         header {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover;
-            padding: 40px 20px;
+            /* ربط الخلفية باسم الصورة تماماً كما ظهر في المعرض */
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('DA1E1176-82A6-4C9A-BAA5-28F9E0AEA963.png') center/cover;
+            padding: 50px 20px;
             text-align: center;
             border-bottom: 2px solid #334155;
             position: relative;
@@ -91,7 +92,7 @@
             padding: 12px 22px;
             font-size: 0.9rem;
             font-weight: 700;
-            border-radius: 50px; /* شكل شبيه بالغيوم */
+            border-radius: 50px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -262,7 +263,7 @@
 
     <div class="container">
         <div class="clouds-grid" id="cloudsGrid">
-            <!-- سيتم توليد أزرار الغيوم ديناميكياً هنا -->
+            <!-- غيوم الأقسام -->
         </div>
     </div>
 
@@ -556,7 +557,6 @@
             document.getElementById('modalOverlay').style.display = 'none';
         }
 
-        // إغلاق النافذة عند النقر خارجها
         window.onclick = function(event) {
             const overlay = document.getElementById('modalOverlay');
             if (event.target === overlay) {
