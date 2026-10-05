@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clouds Café - غيوم كافية</title>
-    <!-- استيراد خطوط Google Fonts: Poppins للوجو + Caveat الخط المشلبك الجميل للبايو -->
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <!-- استيراد خطوط Google Fonts: Poppins للوجو والبايو -->
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -50,228 +50,227 @@
             color: #0f172a;
         }
         header h1 {
-            font-size: 2.2Rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            Color: #38bdf8;
-            Letter-spacing: 2px;
+            color: #38bdf8;
+            letter-spacing: 2px;
             /* خط بوبل عريض + ظل أسود عميق + إضاءة متوهجة */
-            Font-family: 'Poppins', sans-serif;
-            Text-shadow: 0 4px 10px rgba(0, 0, 0, 0.95), 
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.95), 
                          0 0 18px rgba(56, 189, 248, 0.8), 
                          0 0 35px rgba(56, 189, 248, 0.5);
         }
         header h1 span {
-            Color: #f8fafc;
-            Font-weight: 600;
-            Display: block;
-            Font-size: 1.1rem;
-            Letter-spacing: 3px;
-            Font-family: 'Amiri', serif;
-            Text-shadow: 0 2px 6px rgba(0,0,0,0.9);
-            Margin-top: 5px;
+            color: #f8fafc;
+            font-weight: 600;
+            display: block;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            font-family: 'Amiri', serif;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+            margin-top: 5px;
         }
         header p {
-            Color: #cbd5e1;
-            Font-size: 1.3rem; /* تم تصغير الحجم قليلاً ليناسب الأناقة */
-            Margin-top: 10px;
-            Font-weight: 700;
-            /* تطبيق الخط المشلبك الجميل (Cursive/Script) */
-            Font-family: 'Caveat', cursive;
-            Letter-spacing: 1px;
-            Text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            color: #94a3b8; /* لون هادئ وغير لافت ليكون البايو غير مهيمن وسلس */
+            font-size: 0.85rem; /* حجم صغير ومرتب أصغر بكثير من اللوجو */
+            margin-top: 10px;
+            font-weight: 400; /* خط رسمي وناعم */
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1.5px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         /* حاوية أزرار الغيوم */
         .container {
-            Max-width: 900px;
-            Margin: 35px auto;
-            Padding: 0 15px;
-            Text-align: center;
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 0 15px;
+            text-align: center;
         }
         .clouds-grid {
-            Display: flex;
-            Flex-wrap: wrap;
-            Justify-content: center;
-            Gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
         
         /* تصميم زر الغيمة للأقسام */
         .cloud-btn {
-            Background: #1e293b;
-            Color: #f8fafc;
-            Border: 1px solid #334155;
-            Padding: 12px 24px;
-            Font-size: 1.1rem;
-            Font-weight: 700;
-            Border-radius: 50px;
-            Cursor: pointer;
-            Display: inline-flex;
-            Align-items: center;
-            Gap: 10px;
-            Box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            Transition: all 0.3s ease;
-            Font-family: 'Amiri', serif;
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid #334155;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            font-family: 'Amiri', serif;
         }
         .cloud-btn:hover {
-            Background: #38bdf8;
-            Color: #0f172a;
-            Transform: translateY(-3px);
-            Border-color: #38bdf8;
-            Box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
+            background: #38bdf8;
+            color: #0f172a;
+            transform: translateY(-3px);
+            border-color: #38bdf8;
+            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
         }
 
         /* نافذة الإشعار العائمة في المنتصف */
         .modal-overlay {
-            Display: none;
-            Position: fixed;
-            Top: 0;
-            Left: 0;
-            Width: 100%;
-            Height: 100%;
-            Background: rgba(15, 23, 42, 0.6);
-            Backdrop-filter: blur(2px);
-            Z-index: 1000;
-            Justify-content: center;
-            Align-items: center;
-            Padding: 20px;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(2px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
         .modal-box {
-            Background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('9A2E03A5-6565-45B0-8496-5D82CACCA9AF.png') center/cover;
-            Border: 2px solid #38bdf8;
-            Border-radius: 16px;
-            Width: 100%;
-            Max-width: 500px;
-            Max-height: 80vh;
-            Overflow-y: auto;
-            Box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            Animation: popUp 0.3s ease;
-            Position: relative;
-            Padding: 25px;
+            background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), url('9A2E03A5-6565-45B0-8496-5D82CACCA9AF.png') center/cover;
+            border: 2px solid #38bdf8;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            animation: popUp 0.3s ease;
+            position: relative;
+            padding: 25px;
         }
         @keyframes popUp {
-            From { opacity: 0; transform: scale(0.9); }
-            To { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
         .modal-header {
-            Display: flex;
-            Justify-content: space-between;
-            Align-items: center;
-            Border-bottom: 2px dashed rgba(56, 189, 248, 0.5);
-            Padding-bottom: 12px;
-            Margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed rgba(56, 189, 248, 0.5);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
         .modal-title {
-            Font-size: 1.4rem;
-            Color: #38bdf8;
-            Font-weight: 700;
-            Font-family: 'Reem Kufi', sans-serif;
-            Text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+            font-size: 1.4rem;
+            color: #38bdf8;
+            font-weight: 700;
+            font-family: 'Reem Kufi', sans-serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
         }
         .close-btn {
-            Background: rgba(15, 23, 42, 0.8);
-            Color: #94a3b8;
-            Border: 1px solid #334155;
-            Width: 32px;
-            Height: 32px;
-            Border-radius: 50%;
-            Font-size: 1rem;
-            Cursor: pointer;
-            Display: flex;
-            Justify-content: center;
-            Align-items: center;
-            Transition: all 0.2s;
+            background: rgba(15, 23, 42, 0.8);
+            color: #94a3b8;
+            border: 1px solid #334155;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
         }
         .close-btn:hover {
-            Background: #ef4444;
-            Color: #fff;
-            Border-color: #ef4444;
+            background: #ef4444;
+            color: #fff;
+            border-color: #ef4444;
         }
 
         /* قائمة الأصناف بخلفية أفتح لتبرز صورة القهوة بشكل ممتاز خلفها */
         .modal-items-list {
-            Display: flex;
-            Flex-direction: column;
-            Gap: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         .modal-item-row {
-            Background: rgba(15, 23, 42, 0.45);
-            Backdrop-filter: blur(4px);
-            Border: 1px solid rgba(56, 189, 248, 0.3);
-            Border-radius: 10px;
-            Padding: 12px 18px;
-            Display: flex;
-            Justify-content: space-between;
-            Align-items: center;
-            Transition: border-color 0.2s;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 10px;
+            padding: 12px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.2s;
         }
         .modal-item-row:hover {
-            Border-color: #38bdf8;
-            Background: rgba(15, 23, 42, 0.6);
+            border-color: #38bdf8;
+            background: rgba(15, 23, 42, 0.6);
         }
         .modal-item-name {
-            Font-size: 1.15rem;
-            Color: #ffffff;
-            Font-weight: 700;
-            Letter-spacing: 0.3px;
-            Text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            font-size: 1.15rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
         .modal-item-price {
-            Font-size: 1.1rem;
-            Color: #38bdf8;
-            Font-weight: 700;
-            Background: rgba(15, 23, 42, 0.75);
-            Padding: 5px 12px;
-            Border-radius: 8px;
-            Border: 1px solid #334155;
-            Font-family: 'Poppins', sans-serif;
-            Text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            font-size: 1.1rem;
+            color: #38bdf8;
+            font-weight: 700;
+            background: rgba(15, 23, 42, 0.75);
+            padding: 5px 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
 
         /* Footer & Social Icons */
         footer {
-            Text-align: center;
-            Padding: 35px 20px;
-            Background: #090d16;
-            Color: #94a3b8;
-            Border-top: 1px solid #1e293b;
-            Margin-top: 30px;
+            text-align: center;
+            padding: 35px 20px;
+            background: #090d16;
+            color: #94a3b8;
+            border-top: 1px solid #1e293b;
+            margin-top: 30px;
         }
         footer h2 {
-            Color: #f8fafc;
-            Font-size: 1.2rem;
-            Margin-bottom: 8px;
-            Font-weight: 700;
-            Font-family: 'Reem Kufi', sans-serif;
+            color: #f8fafc;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-family: 'Reem Kufi', sans-serif;
         }
         .contact-info {
-            Margin: 10px 0;
-            Font-size: 0.95rem;
+            margin: 10px 0;
+            font-size: 0.95rem;
         }
         
         /* أزرار التواصل الدائرية متجاورة */
         .social-circles {
-            Display: flex;
-            Justify-content: center;
-            Align-items: center;
-            Gap: 15px;
-            Margin: 15px 0 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0 10px 0;
         }
         .social-circle-btn {
-            Width: 45px;
-            Height: 45px;
-            Border-radius: 50%;
-            Display: flex;
-            Justify-content: center;
-            Align-items: center;
-            Color: white;
-            Font-size: 1.2rem;
-            Text-decoration: none;
-            Box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            Transition: transform 0.2s, opacity 0.2s;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s, opacity 0.2s;
         }
         .social-circle-btn:hover {
-            Transform: scale(1.1);
-            Opacity: 0.9;
+            transform: scale(1.1);
+            opacity: 0.9;
         }
         .circle-whatsapp { background-color: #25D366; }
         .circle-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
@@ -283,7 +282,7 @@
     <header>
         <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">English 🌐</button>
         <h1 id="main-title">CLOUDS CAFÉ <span>غيوم كافية</span></h1>
-        <p id="sub-title">Coffee • Food • Sports • Good Vibes</p>
+        <p id="sub-title">COFFEE • FOOD • SPORTS • GOOD VIBES</p>
     </header>
 
     <div class="container">
@@ -598,7 +597,7 @@
                 htmlRoot.setAttribute('lang', 'en');
                 langBtn.textContent = 'عربي 🌐';
                 document.getElementById('main-title').innerHTML = 'CLOUDS CAFÉ <span>Menu</span>';
-                document.getElementById('sub-title').textContent = 'Coffee • Food • Sports • Good Vibes';
+                document.getElementById('sub-title').textContent = 'COFFEE • FOOD • SPORTS • GOOD VIBES';
                 document.getElementById('footer-heading').textContent = 'Good Coffee. Better Moments.';
                 document.getElementById('footer-address').innerHTML = '📍 <strong>Address:</strong> Mafraq - Opposite to Works & Health Directorate';
                 document.getElementById('footer-phones').innerHTML = '📞 <strong>Phones:</strong> 026235772 | 0777778270 | 0771999044';
@@ -608,7 +607,7 @@
                 htmlRoot.setAttribute('lang', 'ar');
                 langBtn.textContent = 'English 🌐';
                 document.getElementById('main-title').innerHTML = 'CLOUDS CAFÉ <span>غيوم كافية</span>';
-                document.getElementById('sub-title').textContent = 'Coffee • Food • Sports • Good Vibes';
+                document.getElementById('sub-title').textContent = 'COFFEE • FOOD • SPORTS • GOOD VIBES';
                 document.getElementById('footer-heading').textContent = 'Good Coffee. Better Moments.';
                 document.getElementById('footer-address').innerHTML = '📍 <strong>العنوان:</strong> المفرق - مقابل مديرية الأشغال ومديرية الصحة';
                 document.getElementById('footer-phones').innerHTML = '📞 <strong>الهواتف:</strong> 026235772 | 0777778270 | 0771999044';
