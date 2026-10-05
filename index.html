@@ -45,128 +45,76 @@
             margin-top: 8px;
         }
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 30px auto;
             padding: 0 20px;
         }
-        /* Home Category Cards View */
-        #categories-view h2.main-heading {
-            text-align: center;
-            font-size: 1.8rem;
-            color: #38bdf8;
-            margin-bottom: 30px;
-        }
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .category-card {
+        .section-box {
             background: #1e293b;
             border: 1px solid #334155;
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
-        .category-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-            background: #253348;
-        }
-        .category-card .cat-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .category-card h3 {
-            font-size: 1.2rem;
-            color: #f8fafc;
-            margin-bottom: 5px;
-        }
-        .category-card span {
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-
-        /* Menu Section View */
-        .section-view {
-            display: none;
-        }
-        .back-btn {
-            background: #334155;
-            color: #f8fafc;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.2s;
-        }
-        .back-btn:hover {
-            background: #38bdf8;
-            color: #0f172a;
-        }
         .section-title {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #38bdf8;
+            margin-bottom: 20px;
             border-bottom: 2px dashed #334155;
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .menu-grid {
+        .section-title span.en {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+        .items-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
         }
         .menu-item {
-            background: #1e293b;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border: 1px solid #334155;
+            transition: border-color 0.2s;
+        }
+        .menu-item:hover {
+            border-color: #38bdf8;
         }
         .item-details h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #f1f5f9;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         .item-details .en-name {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #38bdf8;
             display: block;
-            margin-bottom: 3px;
-        }
-        .item-details p {
-            font-size: 0.85rem;
-            color: #94a3b8;
         }
         .item-price {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #38bdf8;
-            background: #0f172a;
-            padding: 8px 12px;
+            background: #1e293b;
+            padding: 6px 12px;
             border-radius: 8px;
             border: 1px solid #334155;
             white-space: nowrap;
         }
-
-        /* Footer & Info */
+        
+        /* Footer & Contact */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: #090d16;
             color: #94a3b8;
             margin-top: 50px;
@@ -182,22 +130,49 @@
             font-size: 0.95rem;
         }
         .contact-info p {
-            margin: 5px 0;
+            margin: 8px 0;
+        }
+        .whatsapp-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .whatsapp-btn {
+            background: #065f46;
+            color: #ecfdf5;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid #047857;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .whatsapp-btn:hover {
+            background: #047857;
         }
         .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin: 20px 0;
+            margin: 25px 0 15px 0;
         }
         .social-btn {
             background: #1e293b;
             color: #38bdf8;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 10px 25px;
+            border-radius: 10px;
             text-decoration: none;
             border: 1px solid #334155;
-            font-weight: 600;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: all 0.2s;
         }
         .social-btn:hover {
@@ -214,31 +189,25 @@
         <p>COFFEE • FOOD • SPORTS • GOOD VIBES</p>
     </header>
 
-    <div class="container">
-        <!-- عرض الأقسام الرئيسية -->
-        <div id="categories-view">
-            <h2 class="main-heading">اختر القسم / Select Category</h2>
-            <div class="categories-grid" id="categoriesGrid">
-                <!-- يتم تعبئتها عبر الجافاسكريبت -->
-            </div>
-        </div>
-
-        <!-- عرض عناصر القسم عند النقر -->
-        <div id="section-view" class="section-view">
-            <button class="back-btn" onclick="showCategories()">⬅ العودة للقوائم / Back to Categories</button>
-            <div id="sectionContent"></div>
-        </div>
+    <div class="container" id="menu-container">
+        <!-- سيتم تعبئة المنيو بالكامل هنا تلقائياً -->
     </div>
 
     <footer>
         <h2>Good Coffee. Better Moments.</h2>
         <div class="contact-info">
             <p>📍 <strong>العنوان:</strong> المفرق - مقابل مديرية الأشغال ومديرية الصحة</p>
-            <p>📞 <strong>هواتف التواصل:</strong> 026235772 | 0777778270 | 0771999044</p>
+            <p style="margin-top: 15px;">📞 <strong>تواصل معنا عبر الواتساب:</strong></p>
+            <div class="whatsapp-links">
+                <a href="https://wa.me/96226235772" target="_blank" class="whatsapp-btn">💬 026235772</a>
+                <a href="https://wa.me/962777778270" target="_blank" class="whatsapp-btn">💬 0777778270</a>
+                <a href="https://wa.me/962771999044" target="_blank" class="whatsapp-btn">💬 0771999044</a>
+            </div>
         </div>
+
         <div class="social-links">
-            <a href="https://www.instagram.com/clouds_coffee1?stkn=MTlveHRsNXY0Znd4aw==" target="_blank" class="social-btn">Instagram 📸</a>
-            <a href="https://www.facebook.com/share/1F3SoewJ2h/?mibextid=wwXIfr" target="_blank" class="social-btn">Facebook 📘</a>
+            <a href="https://www.instagram.com/clouds_coffee1?stkn=MTlveHRsNXY0Znd4aw==" target="_blank" class="social-btn">📸 Instagram</a>
+            <a href="https://www.facebook.com/share/1F3SoewJ2h/?mibextid=wwXIfr" target="_blank" class="social-btn">📘 Facebook</a>
         </div>
         <p style="margin-top: 15px; font-size: 0.85rem;">See you at Clouds ☁</p>
     </footer>
@@ -246,10 +215,7 @@
     <script>
         const menuData = [
             {
-                id: 'shisha',
-                titleAr: 'الأراغيل',
-                titleEn: 'Shisha',
-                icon: '💨',
+                titleAr: 'الأراغيل', titleEn: 'Shisha', icon: '💨',
                 items: [
                     {ar: 'نخلة', en: 'Nakla', price: '3.00'},
                     {ar: 'مزايا', en: 'Mazaya', price: '2.50'},
@@ -260,10 +226,7 @@
                 ]
             },
             {
-                id: 'cold_drinks',
-                titleAr: 'المشروبات الباردة',
-                titleEn: 'Cold Drinks',
-                icon: '🧊',
+                titleAr: 'المشروبات الباردة', titleEn: 'Cold Drinks', icon: '🧊',
                 items: [
                     {ar: 'مشروب غازي', en: 'Soft Drink', price: '1.00'},
                     {ar: 'فيمتو', en: 'Vimto', price: '1.25'},
@@ -277,19 +240,13 @@
                 ]
             },
             {
-                id: 'iced_tea',
-                titleAr: 'ايس تي',
-                titleEn: 'Iced Tea',
-                icon: '🍹',
+                titleAr: 'ايس تي', titleEn: 'Iced Tea', icon: '🍹',
                 items: [
                     {ar: 'ايس تي (منجا / خوخ / ليمون / اناناس / فراولة)', en: 'Iced Tea (Mango/Peach/Lemon/Pineapple/Strawberry)', price: '2.50'}
                 ]
             },
             {
-                id: 'mixes',
-                titleAr: 'مكسات',
-                titleEn: 'Mixes & Mojitos',
-                icon: '🧪',
+                titleAr: 'مكسات', titleEn: 'Mixes & Mojitos', icon: '🧪',
                 items: [
                     {ar: 'موهيتو (بلو / باشن / رازبيري / كيوي / بلوبري)', en: 'Mojito (Blue/Passion/Raspberry/Kiwi/Blueberry)', price: '1.50'},
                     {ar: 'مكس بي ام', en: 'BM Mix', price: '1.75'},
@@ -308,10 +265,7 @@
                 ]
             },
             {
-                id: 'hot_drinks',
-                titleAr: 'مشروبات ساخنة',
-                titleEn: 'Hot Drinks',
-                icon: '☕',
+                titleAr: 'مشروبات ساخنة', titleEn: 'Hot Drinks', icon: '☕',
                 items: [
                     {ar: 'شاي', en: 'Tea', price: '1.00'},
                     {ar: 'شاي حليب', en: 'Milk Tea', price: '1.25'},
@@ -329,10 +283,7 @@
                 ]
             },
             {
-                id: 'winter_drinks',
-                titleAr: 'مشروبات الشتاء',
-                titleEn: 'Winter Drinks',
-                icon: '🧥',
+                titleAr: 'مشروبات الشتاء', titleEn: 'Winter Drinks', icon: '🧥',
                 items: [
                     {ar: 'كرك', en: 'Karak', price: '1.50'},
                     {ar: 'كمون ليمون', en: 'Cumin & Lemon', price: '1.50'},
@@ -350,10 +301,7 @@
                 ]
             },
             {
-                id: 'juices',
-                titleAr: 'كوكتيلات وعصائر طازجة',
-                titleEn: 'Fresh Juices & Cocktails',
-                icon: '🍌',
+                titleAr: 'كوكتيلات وعصائر طازجة', titleEn: 'Fresh Juices & Cocktails', icon: '🍌',
                 items: [
                     {ar: 'برتقال', en: 'Orange', price: '2.00'},
                     {ar: 'منجا', en: 'Mango', price: '2.00'},
@@ -378,10 +326,7 @@
                 ]
             },
             {
-                id: 'barista_cold',
-                titleAr: 'باريستا غيوم (بارد)',
-                titleEn: 'Cloud Barista (Cold)',
-                icon: '🥤',
+                titleAr: 'باريستا غيوم (بارد)', titleEn: 'Cloud Barista (Cold)', icon: '🥤',
                 items: [
                     {ar: 'ايس مكياتو', en: 'Iced Macchiato', price: '2.50'},
                     {ar: 'ايس لاتيه (حليب + سيرب)', en: 'Iced Latte (Milk + Syrup)', price: '3.00'},
@@ -397,10 +342,7 @@
                 ]
             },
             {
-                id: 'barista_hot',
-                titleAr: 'باريستا غيوم (ساخن)',
-                titleEn: 'Cloud Barista (Hot)',
-                icon: '☕',
+                titleAr: 'باريستا غيوم (ساخن)', titleEn: 'Cloud Barista (Hot)', icon: '☕',
                 items: [
                     {ar: 'شوت اسبرسو', en: 'Espresso Shot', price: '2.00'},
                     {ar: 'دبل شوت اسبرسو', en: 'Double Espresso Shot', price: '3.00'},
@@ -417,10 +359,7 @@
                 ]
             },
             {
-                id: 'milkshakes',
-                titleAr: 'ميلك شيك',
-                titleEn: 'Milkshakes',
-                icon: '🥛',
+                titleAr: 'ميلك شيك', titleEn: 'Milkshakes', icon: '🥛',
                 items: [
                     {ar: 'فانيلا', en: 'Vanilla', price: '2.50'},
                     {ar: 'فراوله', en: 'Strawberry', price: '2.50'},
@@ -434,10 +373,7 @@
                 ]
             },
             {
-                id: 'ice_cream',
-                titleAr: 'الآيس كريم',
-                titleEn: 'Ice Cream',
-                icon: '🍨',
+                titleAr: 'الآيس كريم', titleEn: 'Ice Cream', icon: '🍨',
                 items: [
                     {ar: 'فانيلا', en: 'Vanilla', price: '2.00'},
                     {ar: 'فراوله', en: 'Strawberry', price: '2.00'},
@@ -449,10 +385,7 @@
                 ]
             },
             {
-                id: 'desserts',
-                titleAr: 'الحلويات',
-                titleEn: 'Desserts',
-                icon: '🥞',
+                titleAr: 'الحلويات', titleEn: 'Desserts', icon: '🥞',
                 items: [
                     {ar: 'تراميسو', en: 'Tiramisu', price: '2.00'},
                     {ar: 'وافل / كريب نوتيلا', en: 'Nutella Waffle / Crepe', price: '3.00'},
@@ -468,10 +401,7 @@
                 ]
             },
             {
-                id: 'fruits_nuts',
-                titleAr: 'الفواكة والمكسرات',
-                titleEn: 'Fruits & Nuts',
-                icon: '🍓',
+                titleAr: 'الفواكة والمكسرات', titleEn: 'Fruits & Nuts', icon: '🍓',
                 items: [
                     {ar: 'صحن فواكة', en: 'Fruit Plate', price: '3.50'},
                     {ar: 'صحن فواكة بالمكسرات والقشطه', en: 'Fruit Plate with Nuts & Cream', price: '4.50'},
@@ -481,10 +411,7 @@
                 ]
             },
             {
-                id: 'addons',
-                titleAr: 'الإضافات',
-                titleEn: 'Add-ons',
-                icon: '✨',
+                titleAr: 'الإضافات', titleEn: 'Add-ons', icon: '✨',
                 items: [
                     {ar: 'قشطة', en: 'Cream', price: '0.75'},
                     {ar: 'عسل', en: 'Honey', price: '0.50'},
@@ -497,35 +424,11 @@
             }
         ];
 
-        function renderCategories() {
-            const grid = document.getElementById('categoriesGrid');
-            grid.innerHTML = '';
-            menuData.forEach(cat => {
-                grid.innerHTML += `
-                    <div class="category-card" onclick="openSection('${cat.id}')">
-                        <div class="cat-icon">${cat.icon}</div>
-                        <h3>${cat.titleAr}</h3>
-                        <span>${cat.titleEn}</span>
-                    </div>
-                `;
-            });
-        }
-
-        function openSection(id) {
-            const cat = menuData.find(c => c.id === id);
-            if (!cat) return;
-
-            document.getElementById('categories-view').style.display = 'none';
-            const sectionView = document.getElementById('section-view');
-            sectionView.style.display = 'block';
-
-            let contentHTML = `
-                <h2 class="section-title">${cat.icon} ${cat.titleAr} <span style="font-size:1.2rem; color:#94a3b8;">/ ${cat.titleEn}</span></h2>
-                <div class="menu-grid">
-            `;
-
-            cat.items.forEach(item => {
-                contentHTML += `
+        const container = document.getElementById('menu-container');
+        menuData.forEach(section => {
+            let itemsHTML = '';
+            section.items.forEach(item => {
+                itemsHTML += `
                     <div class="menu-item">
                         <div class="item-details">
                             <h3>${item.ar}</h3>
@@ -536,19 +439,19 @@
                 `;
             });
 
-            contentHTML += `</div>`;
-            document.getElementById('sectionContent').innerHTML = contentHTML;
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function showCategories() {
-            document.getElementById('section-view').style.display = 'none';
-            document.getElementById('categories-view').style.display = 'block';
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // تشغيل عرض الأقسام عند التحميل
-        renderCategories();
+            container.innerHTML += `
+                <div class="section-box">
+                    <h2 class="section-title">
+                        <span>${section.icon}</span> 
+                        ${section.titleAr} 
+                        <span class="en">/ ${section.titleEn}</span>
+                    </h2>
+                    <div class="items-grid">
+                        ${itemsHTML}
+                    </div>
+                </div>
+            `;
+        });
     </script>
 </body>
 </html>
