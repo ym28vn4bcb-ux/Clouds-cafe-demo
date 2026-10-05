@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clouds Café - منيو كلاود كافيه</title>
+    <title>Clouds Café - غيوم كافية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,20 +18,14 @@
             line-height: 1.6;
         }
         header {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover;
-            padding: 60px 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 50px 20px;
             text-align: center;
             border-bottom: 2px solid #334155;
         }
-        header .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
         header .logo-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
         header h1 {
             font-size: 2.5rem;
@@ -47,17 +41,81 @@
         }
         header p {
             color: #94a3b8;
-            font-size: 1.1rem;
-            margin-top: 10px;
+            font-size: 1rem;
+            margin-top: 8px;
         }
         .container {
             max-width: 1000px;
             margin: 30px auto;
             padding: 0 20px;
         }
+        /* Home Category Cards View */
+        #categories-view h2.main-heading {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #38bdf8;
+            margin-bottom: 30px;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .category-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            background: #253348;
+        }
+        .category-card .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .category-card h3 {
+            font-size: 1.2rem;
+            color: #f8fafc;
+            margin-bottom: 5px;
+        }
+        .category-card span {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* Menu Section View */
+        .section-view {
+            display: none;
+        }
+        .back-btn {
+            background: #334155;
+            color: #f8fafc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
         .section-title {
             text-align: center;
-            margin: 40px 0 20px;
+            margin-bottom: 25px;
             font-size: 2rem;
             color: #38bdf8;
             border-bottom: 2px dashed #334155;
@@ -77,276 +135,420 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: transform 0.2s;
             border: 1px solid #334155;
         }
-        .menu-item:hover {
-            transform: translateY(-3px);
-            border-color: #38bdf8;
-        }
         .item-details h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #f1f5f9;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+        }
+        .item-details .en-name {
+            font-size: 0.85rem;
+            color: #38bdf8;
+            display: block;
+            margin-bottom: 3px;
         }
         .item-details p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #94a3b8;
         }
         .item-price {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #38bdf8;
             background: #0f172a;
-            padding: 8px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
             border: 1px solid #334155;
             white-space: nowrap;
         }
+
+        /* Footer & Info */
         footer {
             text-align: center;
             padding: 40px 20px;
             background: #090d16;
-            color: #64748b;
+            color: #94a3b8;
             margin-top: 50px;
             border-top: 1px solid #1e293b;
         }
         footer h2 {
             color: #f8fafc;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-btn {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid #334155;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .social-btn:hover {
+            background: #38bdf8;
+            color: #0f172a;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <div class="logo-icon">☁</div>
-            <div>
-                <h1>CLOUDS <span>CAFÉ</span></h1>
-            </div>
-        </div>
+        <div class="logo-icon">☁</div>
+        <h1>CLOUDS CAFÉ <span>غيوم كافية</span></h1>
         <p>COFFEE • FOOD • SPORTS • GOOD VIBES</p>
     </header>
 
     <div class="container">
-
-        <!-- الأاراجيل -->
-        <h2 class="section-title">💨 الأراغيل</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>نخلة</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مزايا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فاخر</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>تجديد راس نخلة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>تجديد راس فاخر</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>تجديد راس مزايا</h3></div><div class="item-price">1.50</div></div>
+        <!-- عرض الأقسام الرئيسية -->
+        <div id="categories-view">
+            <h2 class="main-heading">اختر القسم / Select Category</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- يتم تعبئتها عبر الجافاسكريبت -->
+            </div>
         </div>
 
-        <!-- المشروبات الباردة -->
-        <h2 class="section-title">🧊 المشروبات الباردة</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>مشروب غازي</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فيمتو</h3></div><div class="item-price">1.25</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بي ام طاقة</h3></div><div class="item-price">1.25</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كيڤا</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>باربيكان</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كركدية</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بوم بوم</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كود رد</h3></div><div class="item-price">1.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>رد بول</h3></div><div class="item-price">2.25</div></div>
+        <!-- عرض عناصر القسم عند النقر -->
+        <div id="section-view" class="section-view">
+            <button class="back-btn" onclick="showCategories()">⬅ العودة للقوائم / Back to Categories</button>
+            <div id="sectionContent"></div>
         </div>
-
-        <!-- ايس تي -->
-        <h2 class="section-title">🍹 ايس تي</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>ايس تي</h3><p>منجا / خوخ / ليمون / اناناس / فراولة</p></div><div class="item-price">2.50</div></div>
-        </div>
-
-        <!-- مكسات -->
-        <h2 class="section-title">🧪 مكسات</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>موهيتو</h3><p>بلو / باشن / رازبيري / كيوي / بلوبري</p></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس بي ام</h3></div><div class="item-price">1.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>غالب الشوق</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس بوم</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس كود رد</h3></div><div class="item-price">2.25</div></div>
-            <div class="menu-item"><div class="item-details"><h3>باشن فروت & اورنج</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس رد بول</h3></div><div class="item-price">2.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس مانجو كلاود موهيتو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>موهيتو كيوي وليمون قطع</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس كركديه ورازبيري</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس كركديه بالمنجا والاناناس</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس كركدية وفراولة</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>موهيتو تايجر مانجو بليمون</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكس كركدية ب الفراولة والباشن والاناناس</h3></div><div class="item-price">3.00</div></div>
-        </div>
-
-        <!-- مشروبات ساخنة -->
-        <h2 class="section-title">☕ مشروبات ساخنة</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>شاي</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>شاي حليب</h3></div><div class="item-price">1.25</div></div>
-            <div class="menu-item"><div class="item-details"><h3>شاي بليمون</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>شاي كرك</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>قهوة</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>قهوة دبل</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>نسكافية بلاك</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>نسكافية</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كبتشينو</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>شوكلت</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>زهورات</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>إبريق شاي غزالين</h3></div><div class="item-price">3.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>إبريق شاي زهور الشفاء</h3></div><div class="item-price">5.00</div></div>
-        </div>
-
-        <!-- مشروبات الشتاء -->
-        <h2 class="section-title">🧥 مشروبات الشتاء</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>كرك</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كمون ليمون</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>زنجبيل وحليب</h3></div><div class="item-price">1.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>زنجبيل وحليب وعسل</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>يانسون حليب وعسل</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بابونج بري</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>زهورات رشحة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>قرفة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>سحلب</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>هوت نوتيلا</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>هوت لوتس</h3></div><div class="item-price">2.25</div></div>
-            <div class="menu-item"><div class="item-details"><h3>هوت بستاشيو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>إبريق كرك</h3></div><div class="item-price">6.00</div></div>
-        </div>
-
-        <!-- كوكتيلات وعصائر -->
-        <h2 class="section-title">🍌 كوكتيلات وعصائر طازجة</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>برتقال</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>منجا</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>جوافة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ليمون</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ليمون و نعنع</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كيوي</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ليمون وكيوي</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كيوي واناناس</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>أناناس</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كوكتيل فواكة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>موز حليب</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>موز حليب وفراولة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>موز حليب ونوتيلا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>منجا وفراولة وموز</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>برازيليا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>عوار قلب</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>روزي</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>افوكادوا سادة</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>افوكادوا ومنجا</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>افوكادوا بلقشطة وبالمكسرات</h3></div><div class="item-price">4.00</div></div>
-        </div>
-
-        <!-- باريستا غيوم بارد -->
-        <h2 class="section-title">🧊 باريستا غيوم (بارد)</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>ايس مكياتو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ايس لاتيه</h3><p>حليب + سيرب</p></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ايس سبانش لاتيه</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ايس كراميل لآتية</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ايس موكا</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ايس امركانو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>اورنج امركانو</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ألفريدو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ستروبري وايت موكا</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فرابتشينو</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>V60</h3></div><div class="item-price">3.00</div></div>
-        </div>
-
-        <!-- باريستا غيوم ساخن -->
-        <h2 class="section-title">☕ باريستا غيوم (ساخن)</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>شوت اسبرسو</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>دبل شوت اسبرسو</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>امركانو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>موكا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>وايت موكا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كوفي لآتية</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>سبانش لآتية</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كورتادو</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كراميل مكياتو</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فلات وايت</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بستاشيو لاتية</h3></div><div class="item-price">3.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>V60</h3></div><div class="item-price">3.00</div></div>
-        </div>
-
-        <!-- ميلك شيك -->
-        <h2 class="section-title">🥛 ميلك شيك</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>فانيلا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فراوله</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>توت</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>شوكلاتة</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>عربي</h3></div><div class="item-price">2.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>لوتس</h3></div><div class="item-price">2.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>سنكرز</h3></div><div class="item-price">2.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بستاشيو</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>سيرلاك</h3></div><div class="item-price">3.00</div></div>
-        </div>
-
-        <!-- الآيس كريم -->
-        <h2 class="section-title">🍨 الآيس كريم</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>فانيلا</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فراوله</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>توت</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>شوكلاتة</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>عربي</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>لوتس</h3></div><div class="item-price">2.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>سنكرز</h3></div><div class="item-price">2.75</div></div>
-        </div>
-
-        <!-- الحلويات -->
-        <h2 class="section-title">🥞 الحلويات</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>تراميسو</h3></div><div class="item-price">2.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>وافل / كريب نوتيلا</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>وافل / كريب لوتس</h3></div><div class="item-price">3.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>وافل / كريب بستاشيو</h3></div><div class="item-price">4.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>وافل / كريب مكس شوكلاته</h3></div><div class="item-price">4.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بان كيك نوتيلا</h3></div><div class="item-price">3.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بان كيك لوتس</h3></div><div class="item-price">4.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بان كيك بستاشيو</h3></div><div class="item-price">4.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>بان كيك مكس</h3></div><div class="item-price">4.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>اضافة فواكة</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>اضافة ايس كريم</h3></div><div class="item-price">1.00</div></div>
-        </div>
-
-        <!-- الفواكة والمكسرات -->
-        <h2 class="section-title">🍓 الفواكة والمكسرات</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>صحن فواكة</h3></div><div class="item-price">3.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>صحن فواكة بالمكسرات والقشطه</h3></div><div class="item-price">4.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كاسة فواكة بالشوكلاتة</h3></div><div class="item-price">3.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>كاسة فراوله وموز بالنوتيلا</h3></div><div class="item-price">2.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>صحن قشطة وعسل ومكسرات</h3></div><div class="item-price">2.75</div></div>
-        </div>
-
-        <!-- الإضافات -->
-        <h2 class="section-title">✨ الإضافات</h2>
-        <div class="menu-grid">
-            <div class="menu-item"><div class="item-details"><h3>قشطة</h3></div><div class="item-price">0.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>عسل</h3></div><div class="item-price">0.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>مكسرات</h3></div><div class="item-price">0.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>صوص شوكلت</h3></div><div class="item-price">0.50</div></div>
-            <div class="menu-item"><div class="item-details"><h3>صوص بستاشيو</h3></div><div class="item-price">0.75</div></div>
-            <div class="menu-item"><div class="item-details"><h3>فواكة</h3></div><div class="item-price">1.00</div></div>
-            <div class="menu-item"><div class="item-details"><h3>ايس كريم</h3></div><div class="item-price">1.25</div></div>
-        </div>
-
     </div>
 
     <footer>
         <h2>Good Coffee. Better Moments.</h2>
-        <p>See you at Clouds ☁</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">COFFEE • FOOD • SPORTS • GOOD VIBES</p>
+        <div class="contact-info">
+            <p>📍 <strong>العنوان:</strong> المفرق - مقابل مديرية الأشغال ومديرية الصحة</p>
+            <p>📞 <strong>هواتف التواصل:</strong> 026235772 | 0777778270 | 0771999044</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/clouds_coffee1?stkn=MTlveHRsNXY0Znd4aw==" target="_blank" class="social-btn">Instagram 📸</a>
+            <a href="https://www.facebook.com/share/1F3SoewJ2h/?mibextid=wwXIfr" target="_blank" class="social-btn">Facebook 📘</a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.85rem;">See you at Clouds ☁</p>
     </footer>
 
+    <script>
+        const menuData = [
+            {
+                id: 'shisha',
+                titleAr: 'الأراغيل',
+                titleEn: 'Shisha',
+                icon: '💨',
+                items: [
+                    {ar: 'نخلة', en: 'Nakla', price: '3.00'},
+                    {ar: 'مزايا', en: 'Mazaya', price: '2.50'},
+                    {ar: 'فاخر', en: 'Fakher', price: '3.00'},
+                    {ar: 'تجديد راس نخلة', en: 'Nakla Refill', price: '2.00'},
+                    {ar: 'تجديد راس فاخر', en: 'Fakher Refill', price: '2.00'},
+                    {ar: 'تجديد راس مزايا', en: 'Mazaya Refill', price: '1.50'}
+                ]
+            },
+            {
+                id: 'cold_drinks',
+                titleAr: 'المشروبات الباردة',
+                titleEn: 'Cold Drinks',
+                icon: '🧊',
+                items: [
+                    {ar: 'مشروب غازي', en: 'Soft Drink', price: '1.00'},
+                    {ar: 'فيمتو', en: 'Vimto', price: '1.25'},
+                    {ar: 'بي ام طاقة', en: 'BM Energy', price: '1.25'},
+                    {ar: 'كيڤا', en: 'Kiva', price: '1.50'},
+                    {ar: 'باربيكان', en: 'Barbican', price: '1.50'},
+                    {ar: 'كركدية', en: 'Karkadeh', price: '1.50'},
+                    {ar: 'بوم بوم', en: 'Boom Boom', price: '1.50'},
+                    {ar: 'كود رد', en: 'Code Red', price: '1.75'},
+                    {ar: 'رد بول', en: 'Red Bull', price: '2.25'}
+                ]
+            },
+            {
+                id: 'iced_tea',
+                titleAr: 'ايس تي',
+                titleEn: 'Iced Tea',
+                icon: '🍹',
+                items: [
+                    {ar: 'ايس تي (منجا / خوخ / ليمون / اناناس / فراولة)', en: 'Iced Tea (Mango/Peach/Lemon/Pineapple/Strawberry)', price: '2.50'}
+                ]
+            },
+            {
+                id: 'mixes',
+                titleAr: 'مكسات',
+                titleEn: 'Mixes & Mojitos',
+                icon: '🧪',
+                items: [
+                    {ar: 'موهيتو (بلو / باشن / رازبيري / كيوي / بلوبري)', en: 'Mojito (Blue/Passion/Raspberry/Kiwi/Blueberry)', price: '1.50'},
+                    {ar: 'مكس بي ام', en: 'BM Mix', price: '1.75'},
+                    {ar: 'غالب الشوق', en: 'Galeb Al Shouq', price: '2.00'},
+                    {ar: 'مكس بوم', en: 'Boom Mix', price: '2.00'},
+                    {ar: 'مكس كود رد', en: 'Code Red Mix', price: '2.25'},
+                    {ar: 'باشن فروت & اورنج', en: 'Passion Fruit & Orange', price: '2.50'},
+                    {ar: 'مكس رد بول', en: 'Red Bull Mix', price: '2.75'},
+                    {ar: 'مكس مانجو كلاود موهيتو', en: 'Mango Cloud Mojito Mix', price: '2.50'},
+                    {ar: 'موهيتو كيوي وليمون قطع', en: 'Kiwi & Lemon Pieces Mojito', price: '2.50'},
+                    {ar: 'مكس كركديه ورازبيري', en: 'Karkadeh & Raspberry Mix', price: '2.50'},
+                    {ar: 'مكس كركديه بالمنجا والاناناس', en: 'Karkadeh, Mango & Pineapple Mix', price: '2.50'},
+                    {ar: 'مكس كركدية وفراولة', en: 'Karkadeh & Strawberry Mix', price: '2.50'},
+                    {ar: 'موهيتو تايجر مانجو بليمون', en: 'Tiger Mango & Lemon Mojito', price: '2.50'},
+                    {ar: 'مكس كركدية بالفراولة والباشن والاناناس', en: 'Karkadeh, Strawberry, Passion & Pineapple Mix', price: '3.00'}
+                ]
+            },
+            {
+                id: 'hot_drinks',
+                titleAr: 'مشروبات ساخنة',
+                titleEn: 'Hot Drinks',
+                icon: '☕',
+                items: [
+                    {ar: 'شاي', en: 'Tea', price: '1.00'},
+                    {ar: 'شاي حليب', en: 'Milk Tea', price: '1.25'},
+                    {ar: 'شاي بليمون', en: 'Lemon Tea', price: '1.50'},
+                    {ar: 'شاي كرك', en: 'Karak Tea', price: '1.50'},
+                    {ar: 'قهوة', en: 'Coffee', price: '1.00'},
+                    {ar: 'قهوة دبل', en: 'Double Coffee', price: '1.50'},
+                    {ar: 'نسكافية بلاك', en: 'Nescafe Black', price: '1.50'},
+                    {ar: 'نسكافية', en: 'Nescafe', price: '1.00'},
+                    {ar: 'كبتشينو', en: 'Cappuccino', price: '1.00'},
+                    {ar: 'شوكلت', en: 'Hot Chocolate', price: '1.00'},
+                    {ar: 'زهورات', en: 'Zhourat', price: '1.00'},
+                    {ar: 'إبريق شاي غزالين', en: 'Ghazalain Teapot', price: '3.50'},
+                    {ar: 'إبريق شاي زهور الشفاء', en: 'Zohour Al Shifa Teapot', price: '5.00'}
+                ]
+            },
+            {
+                id: 'winter_drinks',
+                titleAr: 'مشروبات الشتاء',
+                titleEn: 'Winter Drinks',
+                icon: '🧥',
+                items: [
+                    {ar: 'كرك', en: 'Karak', price: '1.50'},
+                    {ar: 'كمون ليمون', en: 'Cumin & Lemon', price: '1.50'},
+                    {ar: 'زنجبيل وحليب', en: 'Ginger & Milk', price: '1.50'},
+                    {ar: 'زنجبيل وحليب وعسل', en: 'Ginger, Milk & Honey', price: '2.00'},
+                    {ar: 'يانسون حليب وعسل', en: 'Anise, Milk & Honey', price: '2.00'},
+                    {ar: 'بابونج بري', en: 'Wild Chamomile', price: '2.00'},
+                    {ar: 'زهورات رشحة', en: 'Cold Relief Zhourat', price: '2.00'},
+                    {ar: 'قرفة', en: 'Cinnamon', price: '2.00'},
+                    {ar: 'سحلب', en: 'Sahlab', price: '2.00'},
+                    {ar: 'هوت نوتيلا', en: 'Hot Nutella', price: '2.00'},
+                    {ar: 'هوت لوتس', en: 'Hot Lotus', price: '2.25'},
+                    {ar: 'هوت بستاشيو', en: 'Hot Pistachio', price: '2.50'},
+                    {ar: 'إبريق كرك', en: 'Karak Teapot', price: '6.00'}
+                ]
+            },
+            {
+                id: 'juices',
+                titleAr: 'كوكتيلات وعصائر طازجة',
+                titleEn: 'Fresh Juices & Cocktails',
+                icon: '🍌',
+                items: [
+                    {ar: 'برتقال', en: 'Orange', price: '2.00'},
+                    {ar: 'منجا', en: 'Mango', price: '2.00'},
+                    {ar: 'جوافة', en: 'Guava', price: '2.00'},
+                    {ar: 'ليمون', en: 'Lemon', price: '2.00'},
+                    {ar: 'ليمون و نعنع', en: 'Lemon & Mint', price: '2.00'},
+                    {ar: 'كيوي', en: 'Kiwi', price: '2.50'},
+                    {ar: 'ليمون وكيوي', en: 'Lemon & Kiwi', price: '2.50'},
+                    {ar: 'كيوي واناناس', en: 'Kiwi & Pineapple', price: '2.50'},
+                    {ar: 'أناناس', en: 'Pineapple', price: '2.50'},
+                    {ar: 'كوكتيل فواكة', en: 'Fruit Cocktail', price: '2.00'},
+                    {ar: 'موز حليب', en: 'Banana Milk', price: '2.00'},
+                    {ar: 'موز حليب وفراولة', en: 'Banana Milk & Strawberry', price: '2.00'},
+                    {ar: 'موز حليب ونوتيلا', en: 'Banana Milk & Nutella', price: '2.50'},
+                    {ar: 'منجا وفراولة وموز', en: 'Mango, Strawberry & Banana', price: '2.50'},
+                    {ar: 'برازيليا', en: 'Brasilia', price: '2.50'},
+                    {ar: 'عوار قلب', en: 'Awar Kalb', price: '2.50'},
+                    {ar: 'روزي', en: 'Rosy', price: '2.50'},
+                    {ar: 'افوكادوا سادة', en: 'Plain Avocado', price: '2.50'},
+                    {ar: 'افوكادوا ومنجا', en: 'Avocado & Mango', price: '3.00'},
+                    {ar: 'افوكادوا بلقشطة وبالمكسرات', en: 'Avocado with Cream & Nuts', price: '4.00'}
+                ]
+            },
+            {
+                id: 'barista_cold',
+                titleAr: 'باريستا غيوم (بارد)',
+                titleEn: 'Cloud Barista (Cold)',
+                icon: '🥤',
+                items: [
+                    {ar: 'ايس مكياتو', en: 'Iced Macchiato', price: '2.50'},
+                    {ar: 'ايس لاتيه (حليب + سيرب)', en: 'Iced Latte (Milk + Syrup)', price: '3.00'},
+                    {ar: 'ايس سبانش لاتيه', en: 'Iced Spanish Latte', price: '3.00'},
+                    {ar: 'ايس كراميل لآتية', en: 'Iced Caramel Latte', price: '3.00'},
+                    {ar: 'ايس موكا', en: 'Iced Mocha', price: '3.00'},
+                    {ar: 'ايس امركانو', en: 'Iced Americano', price: '2.50'},
+                    {ar: 'اورنج امركانو', en: 'Orange Americano', price: '3.00'},
+                    {ar: 'ألفريدو', en: 'Alfredo', price: '2.50'},
+                    {ar: 'ستروبري وايت موكا', en: 'Strawberry White Mocha', price: '3.00'},
+                    {ar: 'فرابتشينو', en: 'Frappuccino', price: '3.00'},
+                    {ar: 'V60', en: 'V60 Cold', price: '3.00'}
+                ]
+            },
+            {
+                id: 'barista_hot',
+                titleAr: 'باريستا غيوم (ساخن)',
+                titleEn: 'Cloud Barista (Hot)',
+                icon: '☕',
+                items: [
+                    {ar: 'شوت اسبرسو', en: 'Espresso Shot', price: '2.00'},
+                    {ar: 'دبل شوت اسبرسو', en: 'Double Espresso Shot', price: '3.00'},
+                    {ar: 'امركانو', en: 'Americano', price: '2.50'},
+                    {ar: 'موكا', en: 'Mocha', price: '2.50'},
+                    {ar: 'وايت موكا', en: 'White Mocha', price: '2.50'},
+                    {ar: 'كوفي لآتية', en: 'Caffe Latte', price: '2.50'},
+                    {ar: 'سبانش لآتية', en: 'Spanish Latte', price: '3.00'},
+                    {ar: 'كورتادو', en: 'Cortado', price: '3.00'},
+                    {ar: 'كراميل مكياتو', en: 'Caramel Macchiato', price: '2.50'},
+                    {ar: 'فلات وايت', en: 'Flat White', price: '2.50'},
+                    {ar: 'بستاشيو لاتية', en: 'Pistachio Latte', price: '3.50'},
+                    {ar: 'V60', en: 'V60 Hot', price: '3.00'}
+                ]
+            },
+            {
+                id: 'milkshakes',
+                titleAr: 'ميلك شيك',
+                titleEn: 'Milkshakes',
+                icon: '🥛',
+                items: [
+                    {ar: 'فانيلا', en: 'Vanilla', price: '2.50'},
+                    {ar: 'فراوله', en: 'Strawberry', price: '2.50'},
+                    {ar: 'توت', en: 'Berry', price: '2.50'},
+                    {ar: 'شوكلاتة', en: 'Chocolate', price: '2.50'},
+                    {ar: 'عربي', en: 'Arabic Milkshake', price: '2.75'},
+                    {ar: 'لوتس', en: 'Lotus', price: '2.75'},
+                    {ar: 'سنكرز', en: 'Snickers', price: '2.75'},
+                    {ar: 'بستاشيو', en: 'Pistachio', price: '3.00'},
+                    {ar: 'سيرلاك', en: 'Cerelac', price: '3.00'}
+                ]
+            },
+            {
+                id: 'ice_cream',
+                titleAr: 'الآيس كريم',
+                titleEn: 'Ice Cream',
+                icon: '🍨',
+                items: [
+                    {ar: 'فانيلا', en: 'Vanilla', price: '2.00'},
+                    {ar: 'فراوله', en: 'Strawberry', price: '2.00'},
+                    {ar: 'توت', en: 'Berry', price: '2.00'},
+                    {ar: 'شوكلاتة', en: 'Chocolate', price: '2.00'},
+                    {ar: 'عربي', en: 'Arabic Ice Cream', price: '2.50'},
+                    {ar: 'لوتس', en: 'Lotus', price: '2.75'},
+                    {ar: 'سنكرز', en: 'Snickers', price: '2.75'}
+                ]
+            },
+            {
+                id: 'desserts',
+                titleAr: 'الحلويات',
+                titleEn: 'Desserts',
+                icon: '🥞',
+                items: [
+                    {ar: 'تراميسو', en: 'Tiramisu', price: '2.00'},
+                    {ar: 'وافل / كريب نوتيلا', en: 'Nutella Waffle / Crepe', price: '3.00'},
+                    {ar: 'وافل / كريب لوتس', en: 'Lotus Waffle / Crepe', price: '3.50'},
+                    {ar: 'وافل / كريب بستاشيو', en: 'Pistachio Waffle / Crepe', price: '4.00'},
+                    {ar: 'وافل / كريب مكس شوكلاته', en: 'Mix Chocolate Waffle / Crepe', price: '4.00'},
+                    {ar: 'بان كيك نوتيلا', en: 'Nutella Pancakes', price: '3.50'},
+                    {ar: 'بان كيك لوتس', en: 'Lotus Pancakes', price: '4.00'},
+                    {ar: 'بان كيك بستاشيو', en: 'Pistachio Pancakes', price: '4.50'},
+                    {ar: 'بان كيك مكس', en: 'Mix Pancakes', price: '4.00'},
+                    {ar: 'اضافة فواكة', en: 'Add Fruits', price: '1.00'},
+                    {ar: 'اضافة ايس كريم', en: 'Add Ice Cream', price: '1.00'}
+                ]
+            },
+            {
+                id: 'fruits_nuts',
+                titleAr: 'الفواكة والمكسرات',
+                titleEn: 'Fruits & Nuts',
+                icon: '🍓',
+                items: [
+                    {ar: 'صحن فواكة', en: 'Fruit Plate', price: '3.50'},
+                    {ar: 'صحن فواكة بالمكسرات والقشطه', en: 'Fruit Plate with Nuts & Cream', price: '4.50'},
+                    {ar: 'كاسة فواكة بالشوكلاتة', en: 'Fruit Cup with Chocolate', price: '3.00'},
+                    {ar: 'كاسة فراوله وموز بالنوتيلا', en: 'Strawberry & Banana Cup with Nutella', price: '2.50'},
+                    {ar: 'صحن قشطة وعسل ومكسرات', en: 'Cream, Honey & Nuts Plate', price: '2.75'}
+                ]
+            },
+            {
+                id: 'addons',
+                titleAr: 'الإضافات',
+                titleEn: 'Add-ons',
+                icon: '✨',
+                items: [
+                    {ar: 'قشطة', en: 'Cream', price: '0.75'},
+                    {ar: 'عسل', en: 'Honey', price: '0.50'},
+                    {ar: 'مكسرات', en: 'Nuts', price: '0.50'},
+                    {ar: 'صوص شوكلت', en: 'Chocolate Sauce', price: '0.50'},
+                    {ar: 'صوص بستاشيو', en: 'Pistachio Sauce', price: '0.75'},
+                    {ar: 'فواكة', en: 'Fruits', price: '1.00'},
+                    {ar: 'ايس كريم', en: 'Ice Cream', price: '1.25'}
+                ]
+            }
+        ];
+
+        function renderCategories() {
+            const grid = document.getElementById('categoriesGrid');
+            grid.innerHTML = '';
+            menuData.forEach(cat => {
+                grid.innerHTML += `
+                    <div class="category-card" onclick="openSection('${cat.id}')">
+                        <div class="cat-icon">${cat.icon}</div>
+                        <h3>${cat.titleAr}</h3>
+                        <span>${cat.titleEn}</span>
+                    </div>
+                `;
+            });
+        }
+
+        function openSection(id) {
+            const cat = menuData.find(c => c.id === id);
+            if (!cat) return;
+
+            document.getElementById('categories-view').style.display = 'none';
+            const sectionView = document.getElementById('section-view');
+            sectionView.style.display = 'block';
+
+            let contentHTML = `
+                <h2 class="section-title">${cat.icon} ${cat.titleAr} <span style="font-size:1.2rem; color:#94a3b8;">/ ${cat.titleEn}</span></h2>
+                <div class="menu-grid">
+            `;
+
+            cat.items.forEach(item => {
+                contentHTML += `
+                    <div class="menu-item">
+                        <div class="item-details">
+                            <h3>${item.ar}</h3>
+                            <span class="en-name">${item.en}</span>
+                        </div>
+                        <div class="item-price">${item.price}</div>
+                    </div>
+                `;
+            });
+
+            contentHTML += `</div>`;
+            document.getElementById('sectionContent').innerHTML = contentHTML;
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function showCategories() {
+            document.getElementById('section-view').style.display = 'none';
+            document.getElementById('categories-view').style.display = 'block';
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // تشغيل عرض الأقسام عند التحميل
+        renderCategories();
+    </script>
 </body>
 </html>
