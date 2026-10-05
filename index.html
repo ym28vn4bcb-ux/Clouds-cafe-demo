@@ -1,101 +1,176 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clouds Coffee | Demo Menu</title>
-  <meta name="description" content="Clouds Coffee digital menu demo">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">☁</div>
-      <div><strong>CLOUDS</strong><span>COFFEE</span></div>
-    </div>
-    <button id="langBtn" class="icon-btn">عربي</button>
-  </header>
+الاراجيل
+نخلة 3.00
+مزايا 2.50
+فاخر 3.00
+تجديد راس نخلة 2,00
+تجديد راس فاخر 2,00
+تجديد راس مزايا 1,50
 
-  <main>
-    <section class="hero">
-      <div class="hero-overlay">
-        <p class="eyebrow">COFFEE • FOOD • SPORTS • GOOD VIBES</p>
-        <h1>More Than<br><em>Coffee</em></h1>
-        <p class="hero-copy">Good coffee, great food and the best games.</p>
-        <button class="primary" onclick="scrollToMenu()">View Menu <span>→</span></button>
-      </div>
-    </section>
+المشروبات الباردة
+مشروب غازي 1,00
+فيمتو 1,25
+بي ام طاقة 1,25
+كيڤا 1,50
+باربيكان 1,50
+كركدية 1,50
+بوم بوم 1,50
+كود رد 1,75
+رد بول 2,25
 
-    <section class="quick-cats" id="categories">
-      <button onclick="filterMenu('coffee')">☕<span>Hot Coffee</span></button>
-      <button onclick="filterMenu('cold')">🧊<span>Cold Drinks</span></button>
-      <button onclick="filterMenu('mocktails')">🍹<span>Mocktails</span></button>
-      <button onclick="filterMenu('food')">🍔<span>Food</span></button>
-      <button onclick="filterMenu('dessert')">🍰<span>Desserts</span></button>
-      <button onclick="filterMenu('sports')">⚽<span>Live Sports</span></button>
-    </section>
 
-    <section class="menu-section" id="menu">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow blue">OUR MENU</p>
-          <h2>Great Taste, Every Day</h2>
-        </div>
-      </div>
+ايس تي
+ (منجا /خوخ/ليمون/اناناس/فراولة  )2.50
 
-      <div class="search-wrap">
-        <span>⌕</span>
-        <input id="search" type="search" placeholder="Search for your favorite..." oninput="renderMenu()">
-      </div>
+مكسات 
+موهيتو 1,50 
+( بلو / باشن / رازبيري / كيوي / بلوبري )
+مكس بي ام 1,75 
+غالب الشوق 2,00
+مكس بوم 2,00
+مكس كود رد 2,25
+باشن فروت& اورنج  2,50
+مكس رد بول 2,75
+مكس مانجو كلاود موهيتو 2,50
+موهيتو كيوي وليمون قطع 2,50
+مكس كركديه ورازبيري 2,50
+مكس كركديه بالمنجا والاناناس 2,50
+مكس كركدية وفراولة 2,50
+موهيتو تايجر مانجو بليمون 2,50
+مكس كركدية ب الفراولة والباشن والاناناس 3,00
 
-      <div class="tabs" id="tabs">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="coffee">Hot Coffee</button>
-        <button data-filter="cold">Cold Drinks</button>
-        <button data-filter="mocktails">Mocktails</button>
-        <button data-filter="food">Food</button>
-        <button data-filter="dessert">Desserts</button>
-      </div>
+مشوبات ساخنه 
+شاي 1,00
+شاي حليب 1,25
+شاي بليمون1,50
+شاي كرك1,50
+قهوة 1,00
+قهوة دبل 1,50
+نسكافية بلاك 1,50
+نسكافية 1,00
+ /كبتشينو /1,00
+شوكلت/1,00
+زهورات 1,00
+إبريق شاي غزالين 3,50
+إبريق شاي زهور الشفاء 5,00
 
-      <div class="menu-grid" id="menuGrid"></div>
-    </section>
 
-    <section class="promo">
-      <div>
-        <p class="eyebrow blue">CLOUDS SPORTS BAR</p>
-        <h2>Watch. Cheer. Enjoy.</h2>
-        <p>Catch your favorite games with your favorite people.</p>
-      </div>
-      <div class="ball">⚽</div>
-    </section>
 
-    <footer>
-      <div class="footer-logo">☁ CLOUDS <small>COFFEE</small></div>
-      <h2>Good Coffee.<br>Better Moments.</h2>
-      <p>See you at Clouds ☁</p>
-      <div class="footer-line">COFFEE • FOOD • SPORTS • GOOD VIBES</div>
-    </footer>
-  </main>
+مشروبات الشتاء 
+كرك1,50
+كمون ليمون1,50 
+زنجبيل وحليب1,50 
+زنجبيل وحليب وعسل 2,00
+يانسون حليب وعسل 2,00
+بابونج بري  2,00
+زهورات رشحة 2,00
+قرفة 2,00
+سحلب2,00
+هوت نوتيلا2,00
+هوت لوتس2,25
+هوت بستاشيو 2,50
+إبريق كرك 6,00
 
-  <div class="modal" id="modal">
-    <div class="modal-card">
-      <button class="close" onclick="closeModal()">×</button>
-      <img id="modalImg" alt="">
-      <div class="modal-body">
-        <p class="eyebrow blue">CLOUDS SPECIAL</p>
-        <h2 id="modalName"></h2>
-        <p id="modalDesc"></p>
-        <div class="modal-bottom">
-          <strong id="modalPrice"></strong>
-          <button class="primary" onclick="closeModal()">Add to Order</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+كوكتيلات وعصائر
+برتقال 2,00
+منجا 2,00
+جوافة 2,00
+ليمون 2,00
+ليمون و نعنع 2,00
+كيوي 2,50
+ليمون وكيوي2,50
+كيوي واناناس2,50
+أناناس2,50
+كوكتيل فواكة2,00
+موز حليب 2,00
+موز حليب وفراولة 2,00
+موز حليب ونوتيلا2,50
+منجا وفراولة وموز 2,50
+برازيليا 2,50
+عوار قلب 2,50
+روزي 2,50
+افوكادوا سادة 2,50
+افوكادوا ومنجا 3,00
+افوكادوا بلقشطة وبالمكسرات 4,00
+
+باريستا غيوم بارد   
+
+ايس مكياتو 2,50
+ايس لاتيه. 3,00( حليب + سيرسو 
+ايس سبانش لاتيه3,00
+ايس كراميل لآتية 3,00
+ايس موكا 3,00
+ايس امركانو 2,50
+اورنج امركانو3,00
+ألفريدو 2,50
+ستروبري وايت موكا 3,00
+فرابتشينو 3,00
+V60 3,00
+
+باريستا غيوم ساخن
+
+شوت اسبرسو2,00
+دبل شوت اسبرسو3,00
+امركانو 2,50
+أمريكان2,50
+موكا2,50
+وايت موكا2,50
+كوفي لآتية 2,50
+سبانش لآتية3,00
+كورتادو 3,00
+كراميل مكياتو 2,50
+فلات وايت 2,50
+بستاشيو لاتية 3,50
+V60 3،00
+
+الملك شيك
+فانيلا2,50
+فراوله2,50
+توت2,50
+شوكلاتة2,50
+عربي2,75
+لوتس2,75
+سنكرز2,75
+بستاشيو3,00
+سيرلاك 3,00
+
+الآيس كريم 
+
+فانيلا2,00
+فراوله2,00
+توت2,00
+شوكلاتة2,00
+عربي2,50
+لوتس2,75
+سنكرز2,75
+
+الحلويات
+تراميسو 2.00
+وأفل/كريب نوتيلا 3,00
+وأفل/كريب لوتس3,50
+وافل/كريب بستاشيو 4,00
+وافل/كريب مكس شكلاتة 4,00
+بان كيك نوتيلا 3,50
+بان كيك لوتس 4,00
+بان كيك بستاشيو 4,50
+بان كيك مكس 4,00
+اضافة فواكة 1,00
+اضافة ايس كريم 1,00
+
+الفواكة والمكسرات 
+
+صحن فواكة 3,50 
+صحن فواكة بالمكسرات والقشطه 4,50
+كاسة فواكة بالشوكلاتة  3,00
+كاسة فراوله وموز بالنوتيلا 2,50
+صحن قشطة وعسل ومكسرات 2,75
+
+الإضافات 
+
+قشطة 0,75
+عسل0,50
+مكسرات0,50
+صوص شوكلت0,50
+صوص بستاشيو 0,75
+فواكة1,00
+ايس كريم 1,25
