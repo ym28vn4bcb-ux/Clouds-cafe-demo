@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +19,36 @@
         }
         header {
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 2px solid #334155;
+            position: relative;
+        }
+        /* زر الترجمة في أعلى اليسار */
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #334155;
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .lang-switch:hover {
+            background: #38bdf8;
+            color: #0f172a;
         }
         header .logo-icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: #38bdf8;
         }
@@ -36,183 +56,186 @@
             color: #f8fafc;
             font-weight: 400;
             display: block;
-            font-size: 1.2rem;
+            font-size: 1rem;
             letter-spacing: 2px;
         }
         header p {
             color: #94a3b8;
-            font-size: 1rem;
-            margin-top: 8px;
+            font-size: 0.85rem;
+            margin-top: 5px;
         }
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 0 15px;
         }
-        .section-box {
+        
+        /* مستطيل القسم الرفيع */
+        .accordion-header {
             background: #1e293b;
+            color: #f8fafc;
             border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        .section-title {
-            font-size: 1.6rem;
-            color: #38bdf8;
-            margin-bottom: 20px;
-            border-bottom: 2px dashed #334155;
-            padding-bottom: 10px;
+            padding: 12px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            margin-bottom: 10px;
+            transition: all 0.2s;
         }
-        .section-title span.en {
-            font-size: 1rem;
-            color: #94a3b8;
-            font-weight: 400;
+        .accordion-header:hover {
+            border-color: #38bdf8;
+            background: #253348;
         }
+        .accordion-header .arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .accordion-header.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* محتوى القسم عند النقر */
+        .accordion-content {
+            display: none;
+            background: #111827;
+            border: 1px solid #334155;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 15px;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .items-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 10px;
         }
         .menu-item {
-            background: #0f172a;
-            border-radius: 10px;
-            padding: 15px;
+            background: #1e293b;
+            border-radius: 6px;
+            padding: 10px 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border: 1px solid #334155;
-            transition: border-color 0.2s;
-        }
-        .menu-item:hover {
-            border-color: #38bdf8;
         }
         .item-details h3 {
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: #f1f5f9;
-            margin-bottom: 2px;
-        }
-        .item-details .en-name {
-            font-size: 0.8rem;
-            color: #38bdf8;
-            display: block;
+            font-weight: 600;
         }
         .item-price {
-            font-size: 1.05rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: #38bdf8;
-            background: #1e293b;
-            padding: 6px 12px;
-            border-radius: 8px;
+            background: #0f172a;
+            padding: 4px 8px;
+            border-radius: 6px;
             border: 1px solid #334155;
-            white-space: nowrap;
         }
         
-        /* Footer & Contact */
+        /* Footer & Social */
         footer {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             background: #090d16;
             color: #94a3b8;
-            margin-top: 50px;
+            margin-top: 40px;
             border-top: 1px solid #1e293b;
         }
         footer h2 {
             color: #f8fafc;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-bottom: 15px;
         }
         .contact-info {
-            margin: 20px 0;
-            font-size: 0.95rem;
+            margin: 15px 0;
+            font-size: 0.85rem;
         }
         .contact-info p {
-            margin: 8px 0;
+            margin: 5px 0;
         }
-        .whatsapp-links {
+        
+        /* الأزرار باللوجو الخاص */
+        .social-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .whatsapp-btn {
-            background: #065f46;
-            color: #ecfdf5;
-            padding: 8px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid #047857;
-            transition: background 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .whatsapp-btn:hover {
-            background: #047857;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 25px 0 15px 0;
+            gap: 12px;
+            margin: 20px 0;
         }
         .social-btn {
-            background: #1e293b;
-            color: #38bdf8;
-            padding: 10px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            border: 1px solid #334155;
-            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.2s;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #fff;
+            transition: opacity 0.2s;
         }
         .social-btn:hover {
-            background: #38bdf8;
-            color: #0f172a;
+            opacity: 0.85;
         }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .btn-facebook { background-color: #1877F2; }
     </style>
 </head>
 <body>
 
     <header>
+        <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">English 🌐</button>
         <div class="logo-icon">☁</div>
-        <h1>CLOUDS CAFÉ <span>غيوم كافية</span></h1>
-        <p>COFFEE • FOOD • SPORTS • GOOD VIBES</p>
+        <h1 id="main-title">CLOUDS CAFÉ <span>غيوم كافية</span></h1>
+        <p id="sub-title">COFFEE • FOOD • SPORTS • GOOD VIBES</p>
     </header>
 
     <div class="container" id="menu-container">
-        <!-- سيتم تعبئة المنيو بالكامل هنا تلقائياً -->
+        <!-- سيتم تعبئة الأقسام ديناميكياً هنا -->
     </div>
 
     <footer>
-        <h2>Good Coffee. Better Moments.</h2>
+        <h2 id="footer-heading">Good Coffee. Better Moments.</h2>
         <div class="contact-info">
-            <p>📍 <strong>العنوان:</strong> المفرق - مقابل مديرية الأشغال ومديرية الصحة</p>
-            <p style="margin-top: 15px;">📞 <strong>تواصل معنا عبر الواتساب:</strong></p>
-            <div class="whatsapp-links">
-                <a href="https://wa.me/96226235772" target="_blank" class="whatsapp-btn">💬 026235772</a>
-                <a href="https://wa.me/962777778270" target="_blank" class="whatsapp-btn">💬 0777778270</a>
-                <a href="https://wa.me/962771999044" target="_blank" class="whatsapp-btn">💬 0771999044</a>
-            </div>
+            <p id="footer-address">📍 <strong>العنوان:</strong> المفرق - مقابل مديرية الأشغال ومديرية الصحة</p>
         </div>
 
-        <div class="social-links">
-            <a href="https://www.instagram.com/clouds_coffee1?stkn=MTlveHRsNXY0Znd4aw==" target="_blank" class="social-btn">📸 Instagram</a>
-            <a href="https://www.facebook.com/share/1F3SoewJ2h/?mibextid=wwXIfr" target="_blank" class="social-btn">📘 Facebook</a>
+        <div class="social-container">
+            <a href="https://wa.me/96226235772" target="_blank" class="social-btn btn-whatsapp">
+                💬 واتساب (1) / 026235772
+            </a>
+            <a href="https://wa.me/962777778270" target="_blank" class="social-btn btn-whatsapp">
+                💬 واتساب (2) / 0777778270
+            </a>
+            <a href="https://wa.me/962771999044" target="_blank" class="social-btn btn-whatsapp">
+                💬 واتساب (3) / 0771999044
+            </a>
+            <a href="https://www.instagram.com/clouds_coffee1?stkn=MTlveHRsNXY0Znd4aw==" target="_blank" class="social-btn btn-instagram">
+                📸 Instagram
+            </a>
+            <a href="https://www.facebook.com/share/1F3SoewJ2h/?mibextid=wwXIfr" target="_blank" class="social-btn btn-facebook">
+                📘 Facebook
+            </a>
         </div>
-        <p style="margin-top: 15px; font-size: 0.85rem;">See you at Clouds ☁</p>
+        <p style="margin-top: 15px; font-size: 0.8rem;" id="footer-note">See you at Clouds ☁</p>
     </footer>
 
     <script>
+        let currentLang = 'ar';
+
         const menuData = [
             {
                 titleAr: 'الأراغيل', titleEn: 'Shisha', icon: '💨',
@@ -424,34 +447,85 @@
             }
         ];
 
-        const container = document.getElementById('menu-container');
-        menuData.forEach(section => {
-            let itemsHTML = '';
-            section.items.forEach(item => {
-                itemsHTML += `
-                    <div class="menu-item">
-                        <div class="item-details">
-                            <h3>${item.ar}</h3>
-                            <span class="en-name">${item.en}</span>
+        function renderMenu() {
+            const container = document.getElementById('menu-container');
+            container.innerHTML = '';
+
+            menuData.forEach((section, index) => {
+                let title = currentLang === 'ar' ? section.titleAr : section.titleEn;
+                let itemsHTML = '';
+
+                section.items.forEach(item => {
+                    let itemName = currentLang === 'ar' ? item.ar : item.en;
+                    itemsHTML += `
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h3>${itemName}</h3>
+                            </div>
+                            <div class="item-price">${item.price}</div>
                         </div>
-                        <div class="item-price">${item.price}</div>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div>
+                        <div class="accordion-header" onclick="toggleAccordion(${index})">
+                            <span>${section.icon} ${title}</span>
+                            <span class="arrow" id="arrow-${index}">▼</span>
+                        </div>
+                        <div class="accordion-content" id="content-${index}">
+                            <div class="items-grid">
+                                ${itemsHTML}
+                            </div>
+                        </div>
                     </div>
                 `;
             });
+        }
 
-            container.innerHTML += `
-                <div class="section-box">
-                    <h2 class="section-title">
-                        <span>${section.icon}</span> 
-                        ${section.titleAr} 
-                        <span class="en">/ ${section.titleEn}</span>
-                    </h2>
-                    <div class="items-grid">
-                        ${itemsHTML}
-                    </div>
-                </div>
-            `;
-        });
+        function toggleAccordion(index) {
+            const content = document.getElementById(`content-${index}`);
+            const arrow = document.getElementById(`arrow-${index}`);
+            const header = content.previousElementSibling;
+
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                header.classList.remove('active');
+            } else {
+                content.style.display = 'block';
+                header.classList.add('active');
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const htmlRoot = document.getElementById('html-root');
+            const langBtn = document.getElementById('langBtn');
+
+            if (currentLang === 'en') {
+                htmlRoot.setAttribute('dir', 'ltr');
+                htmlRoot.setAttribute('lang', 'en');
+                langBtn.textContent = 'عربي 🌐';
+                document.getElementById('main-title').innerHTML = 'CLOUDS CAFÉ <span>Menu</span>';
+                document.getElementById('sub-title').textContent = 'COFFEE • FOOD • SPORTS • GOOD VIBES';
+                document.getElementById('footer-heading').textContent = 'Good Coffee. Better Moments.';
+                document.getElementById('footer-address').innerHTML = '📍 <strong>Address:</strong> Mafraq - Opposite to Works & Health Directorate';
+                document.getElementById('footer-note').textContent = 'See you at Clouds ☁';
+            } else {
+                htmlRoot.setAttribute('dir', 'rtl');
+                htmlRoot.setAttribute('lang', 'ar');
+                langBtn.textContent = 'English 🌐';
+                document.getElementById('main-title').innerHTML = 'CLOUDS CAFÉ <span>غيوم كافية</span>';
+                document.getElementById('sub-title').textContent = 'COFFEE • FOOD • SPORTS • GOOD VIBES';
+                document.getElementById('footer-heading').textContent = 'Good Coffee. Better Moments.';
+                document.getElementById('footer-address').innerHTML = '📍 <strong>العنوان:</strong> المفرق - مقابل مديرية الأشغال ومديرية الصحة';
+                document.getElementById('footer-note').textContent = 'See you at Clouds ☁';
+            }
+
+            renderMenu();
+        }
+
+        renderMenu();
     </script>
 </body>
 </html>
